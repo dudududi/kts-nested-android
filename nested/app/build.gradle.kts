@@ -34,3 +34,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:1.1.2")
     implementation(project(":nested:core-lib"))
 }
+
+val assemble by tasks
+val parentAssemble = parent!!.tasks.getByName("assemble")
+
+parentAssemble.dependsOn(assemble)

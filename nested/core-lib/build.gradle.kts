@@ -30,3 +30,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:1.1.2")
     implementation("com.google.android.material:material:1.0.0-beta01")
 }
+
+val assemble by tasks
+val parentAssemble = parent!!.tasks.getByName("assemble")
+
+parentAssemble.dependsOn(assemble)
